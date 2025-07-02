@@ -1,6 +1,6 @@
 # Testbench Assignment Review Guide
 
-This README summarizes the changes and features added in response to mentor feedback. Each point includes a brief explanation and relevant code snippets.
+This README summarizes the changes and features added in response to the provided feedback. Each point includes a brief explanation and relevant code snippets.
 
 ---
 
@@ -154,6 +154,7 @@ $stop;
 ```
 
 ## 7. Simulation Results using QuestaSim
+Running 3 tests sequentially:
 
 ![Simulation Results](docs/vsim_transcript.png)
 
