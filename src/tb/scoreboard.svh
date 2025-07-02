@@ -1,3 +1,10 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : scoreboard.svh
+ * Brief  : Scoreboard class — matches expected vs. actual packets,
+ * 			counts results.
+ ***********************************************************************/
+
 class scoreboard;
 	// Incoming mailboxes
 	mailbox mbox_exp, mbox_act;

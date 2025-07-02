@@ -1,3 +1,10 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : monitor.svh
+ * Brief  : Monitor class — receives DUT output and forwards
+ * 			to scoreboard.
+ ***********************************************************************/
+
 class monitor;
 	mailbox			m, m_mon;
 	packet			pkt;

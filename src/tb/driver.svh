@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : driver.svh
+ * Brief  : Driver class — generates and sends randomized packets.
+ ***********************************************************************/
+
 class driver;
 	virtual BFM bfm;
 

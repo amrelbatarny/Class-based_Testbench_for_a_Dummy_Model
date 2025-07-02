@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : top.sv
+ * Brief  : Top-level module — drives multiple test iterations.
+ ***********************************************************************/
+
 module top;
 	import testbench_pkg::*;
 

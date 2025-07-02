@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : dut_model.svh
+ * Brief  : DUT model class — reorders packets with a configurable delay.
+ ***********************************************************************/
+
 class dut_model;
 	mailbox 		m_in, m_out;
 	packet 			pkt_in1, pkt_in2;

@@ -1,3 +1,10 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : report_object.svh
+ * Brief  : Report object — accumulates pass/fail counters and prints
+ * 			summary.
+ ***********************************************************************/
+
 class report_object;
 	int test_num;
 	int driven_count;

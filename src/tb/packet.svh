@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : packet.svh
+ * Brief  : Packet transaction definition with size, ID and payload.
+ ***********************************************************************/
+
 class packet;
 	rand int n;			// Packet Size
 	rand byte data[];	// Payload Data

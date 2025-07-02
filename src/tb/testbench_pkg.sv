@@ -1,3 +1,9 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : testbench_pkg.svh
+ * Brief  : Package wrapper — includes all testbench SVH files.
+ ***********************************************************************/
+
 package testbench_pkg;
 	`include "report_object.svh"
 	`include "packet.svh"

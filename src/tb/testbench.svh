@@ -1,3 +1,10 @@
+/***********************************************************************
+ * Author : Amr El Batarny
+ * File   : testbench.svh
+ * Brief  : Testbench class — instantiates driver, DUT model, monitor,
+ * 			and scoreboard.
+ ***********************************************************************/
+
 class testbench;
 	virtual BFM bfm;
 	
