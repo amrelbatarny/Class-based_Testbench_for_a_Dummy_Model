@@ -14,4 +14,19 @@ class packet;
 		data.size() == n;
 		unique {id};
 	}
+
+	function void copy(packet rhs);
+		// copy simple fields
+		this.n  = rhs.n;
+		this.id = rhs.id;
+		
+		// deep-copy dynamic array
+		if (rhs.data.size() > 0) begin
+		  this.data = new[rhs.data.size()];
+		  foreach (rhs.data[i]) this.data[i] = rhs.data[i];
+		end else begin
+		  // no payload
+		  this.data = {};
+		end
+ 	endfunction : copy
 endclass : packet

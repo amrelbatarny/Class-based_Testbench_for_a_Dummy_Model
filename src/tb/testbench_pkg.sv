@@ -10,6 +10,6 @@ package testbench_pkg;
 	`include "driver.svh"
 	`include "monitor.svh"
 	`include "scoreboard.svh"
-	`include "dut_model.svh"
+	`include "../dut/dut_model.svh"
 	`include "testbench.svh"
 endpackage : testbench_pkg
