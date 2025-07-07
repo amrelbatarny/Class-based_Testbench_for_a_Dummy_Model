@@ -26,7 +26,7 @@ module top;
 		end
 
 		if($value$plusargs("NUM_TEST=%0d", num_test))
-			is_rand_num_test = 1;
+			is_rand_num_test = 0;
 
 		report_h = new(is_rand_num_test, num_test, test_name);
 

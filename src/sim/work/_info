@@ -1,0 +1,108 @@
+m255
+K4
+z2
+!s99 nomlopt
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/VLSI/Siemens_SSP/Assignment1/src/sim
+T_opt
+!s11d testbench_pkg C:/VLSI/Siemens_SSP/Assignment1/src/sim/work 1 BFM 1 C:/VLSI/Siemens_SSP/Assignment1/src/sim/work 
+!s110 1751877234
+VT7F0SgDhbQIiCZkMgkLzg0
+04 3 4 work top fast 0
+=1-6479f04cc8ef-686b8672-b7-461c
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+Z1 tCvgOpt 0
+n@_opt
+OL;O;2021.1;73
+YBFM
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1751877233
+!i10b 1
+!s100 3`oheLmWGZYN9eVW@:a862
+I0[SAPiVb:84U8=UobW]173
+S1
+R0
+w1751496477
+8../dut/bfm.sv
+F../dut/bfm.sv
+!i122 0
+L0 1 0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z6 !s108 1751877233.000000
+Z7 !s107 ../tb/testbench.svh|../dut/dut_model.svh|../tb/scoreboard.svh|../tb/monitor.svh|../tb/driver.svh|../tb/packet.svh|../tb/report_object.svh|../tb/top.sv|../tb/testbench_pkg.sv|../dut/bfm.sv|
+Z8 !s90 -f|src_files.f|-mfcu|+define+SIM|
+!i113 0
+Z9 o-mfcu -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z10 !s92 -mfcu +define+SIM -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R1
+n@b@f@m
+Xtestbench_pkg
+!s115 BFM
+R2
+R3
+!i10b 1
+!s100 idLiK?7aR=84I=7Hk9b;O3
+IPa3:N@VmeXShfUo_K;0B^0
+S1
+R0
+w1751876401
+8../tb/testbench_pkg.sv
+F../tb/testbench_pkg.sv
+F../tb/report_object.svh
+F../tb/packet.svh
+F../tb/driver.svh
+F../tb/monitor.svh
+F../tb/scoreboard.svh
+F../dut/dut_model.svh
+F../tb/testbench.svh
+!i122 0
+L0 7 0
+VPa3:N@VmeXShfUo_K;0B^0
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
+vtop
+R2
+DXx4 work 13 testbench_pkg 0 22 Pa3:N@VmeXShfUo_K;0B^0
+R3
+!i10b 1
+!s100 O7JZTLccaXnV>zQB@YDmX3
+IZdnV[NBTIa9QT]B2XQC9J3
+S1
+R0
+w1751877185
+8../tb/top.sv
+F../tb/top.sv
+!i122 0
+L0 7 38
+R4
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 0
+R9
+R10
+R1
