@@ -70,20 +70,12 @@ class scoreboard;
 
 	// Compare, report, and delete both entries for a given packet ID
 	function void compare_and_cleanup(byte id);
-		packet e = exp_map[id];
-		packet a = act_map[id];
+		packet e = exp_map[id];		// expected packet
+		packet a = act_map[id];		// actual packet
 
-		if (e.data != a.data) begin
-		  $error("[%0t] MISMATCH ID=%0d exp.len=%0d act.len=%0d",
-		         $time, id, e.n, a.n);
-		  rep.mismatch_count++;
-		end else begin
-		  // $display("[%0t] MATCH    ID=%0d len=%0d", $time, id, e.n);
-		  rep.match_count++;
-		end
-
+		e.compare(a, rep);			// compare and update the reporting object
 		exp_map.delete(id);
 		act_map.delete(id);
 		rep.compared_count++;
-	endfunction : compare_and_cleanup	
+	endfunction : compare_and_cleanup
 endclass : scoreboard

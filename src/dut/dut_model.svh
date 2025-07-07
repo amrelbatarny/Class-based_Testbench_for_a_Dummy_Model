@@ -6,8 +6,8 @@
 
 class dut_model;
 	mailbox 		m_in, m_out;
-	packet 			pkt_in1, pkt_in2;
-	bit [8:0]		delay;
+	packet 			pkt_in1, pkt_in2, pkt_in;
+	bit [8:0]		delay_1, delay_2;
 	report_object	rep;
 
 	function new(report_object rep, mailbox mbox_in, mailbox mbox_out);
@@ -19,12 +19,23 @@ class dut_model;
 	task execute();
 		$display("[%0t] DUT: executing", $time);
 		m_in.get(pkt_in1);
-		delay = $urandom_range(300, 500);
+		m_in.get(pkt_in2);
+		delay_1 = $urandom_range(500, 600);
+		delay_2 = $urandom_range(300, 400);
 		fork
-			#delay m_out.put(pkt_in1);
-			forever begin
-				m_in.get(pkt_in2);
-				m_out.put(pkt_in2);
+			begin
+				#delay_1 m_out.put(pkt_in1);
+			end
+
+			begin
+				#delay_2 m_out.put(pkt_in2);
+			end
+			
+			begin
+				forever begin
+					m_in.get(pkt_in);
+					m_out.put(pkt_in);
+				end
 			end
 		join
 	endtask : execute

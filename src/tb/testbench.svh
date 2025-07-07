@@ -21,9 +21,12 @@ class testbench;
 	mailbox		mbox_in, mbox_out;		// DUT model mailboxes
 	mailbox		mbox_mon, mbox_drv;		// Driver and monitor mailboxes for the scoreboard
 
-	function new (report_object rep, virtual BFM b);
+	bit is_small_len;
+
+	function new (report_object rep, virtual BFM b, bit is_small_len);
 		this.report_h = rep;
 		this.bfm = b;
+		this.is_small_len = is_small_len;
 	endfunction : new
 	
 	task execute(bit[8:0] n_pkt);
@@ -33,7 +36,7 @@ class testbench;
 		mbox_drv		= new();
 		
 		dut_h			= new(report_h, mbox_in,  mbox_out);
-		driver_h		= new(report_h, mbox_in,  mbox_drv, bfm);
+		driver_h		= new(report_h, mbox_in,  mbox_drv, bfm, is_small_len);
 		monitor_h		= new(report_h, mbox_out, mbox_mon);
 		scoreboard_h	= new(report_h, mbox_drv, mbox_mon, bfm);
 

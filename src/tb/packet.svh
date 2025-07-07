@@ -11,7 +11,7 @@ class packet;
 	
 	constraint c {
 		n inside {[10:100]};
-		data.size() == n;
+		soft data.size() == n;
 		unique {id};
 	}
 
@@ -29,4 +29,15 @@ class packet;
 		  this.data = {};
 		end
  	endfunction : copy
+
+ 	function void compare(input packet rhs, inout report_object rep);
+		if (this.data != rhs.data) begin
+			$error("[%0t] MISMATCH ID=%0d exp.len=%0d act.len=%0d",
+				$time, this.id, this.n, rhs.n);
+			rep.mismatch_count++;
+		end else begin
+		  // $display("[%0t] MATCH    ID=%0d len=%0d", $time, this.id, this.n);
+		  rep.match_count++;
+		end
+ 	endfunction : compare
 endclass : packet

@@ -11,12 +11,15 @@ class driver;
 	packet 			pkt;
 	bit				finished;
 	report_object	rep;
+	int				n_cycles;
+	bit 			is_small_len;
 
-	function new(report_object rep, mailbox mbox, mailbox mbox_drv, virtual BFM b);
-		this.rep	= rep;
-		this.m		= mbox;
-		this.m_drv	= mbox_drv;
-		this.bfm	= b;
+	function new(report_object rep, mailbox mbox, mailbox mbox_drv, virtual BFM b, bit is_small_len);
+		this.rep			= rep;
+		this.m				= mbox;
+		this.m_drv			= mbox_drv;
+		this.bfm			= b;
+		this.is_small_len	= is_small_len;
 	endfunction
 
 	task execute(bit[8:0] n_pkt);
@@ -24,11 +27,15 @@ class driver;
 		repeat(n_pkt) begin
 			@(negedge bfm.clk);
 			pkt = new();
-			assert(pkt.randomize());
+			if(is_small_len)
+				assert(pkt.randomize() with { data.size() inside {[2:6]}; });
+			else // default
+				assert(pkt.randomize());
 			m.put(pkt);
 			m_drv.put(pkt);
 			rep.driven_count++;
-			repeat (pkt.n) @(negedge bfm.clk);
+			n_cycles = $urandom_range(pkt.n, 400);
+			repeat (n_cycles) @(negedge bfm.clk);
 		end
 		finished = 1;
 	endtask : execute
